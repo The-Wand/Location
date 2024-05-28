@@ -6,7 +6,7 @@
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) .LICENSE
+/// 1) LICENSE file
 /// 2) https://apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
@@ -18,44 +18,30 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-import SwiftUI
+import Foundation
+import XCTest
 
-import CoreLocation
 import Wand
-import WandCoreLocation
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-@main
-struct PlayApp: App {
+/// Test Unit
+//struct Unit {
+//
+//}
 
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
+extension TimeInterval {
+
+    static var `default` = 4.2
 
 }
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-struct ContentView: View {
-    var body: some View {
+extension XCTestCase {
 
-        VStack {
-            Image(systemName: "wand.and.stars").onAppear() {
-                
-                |.one { (l: CLLocation) in
-                    print()
-                }
-
-            }
-            Text("Hello, world!")
-        }
-        .padding()
-
+    func expectation(function: String = #function) -> XCTestExpectation {
+        expectation(description: function)
     }
-}
 
-@available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
-#Preview {
-    ContentView()
+    func waitForExpectations() {
+        waitForExpectations(timeout: .default)
+    }
+
 }

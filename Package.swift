@@ -1,4 +1,5 @@
-// swift-tools-version:5.3
+// swift-tools-version: 5.6
+
 ///
 /// Copyright © 2020-2024 El Machine 🤖
 /// https://el-machine.com/
@@ -22,24 +23,34 @@
 import PackageDescription
 
 let package = Package(
-    name: "Wand",
+    name: "Wand_CoreLocation",
     defaultLocalization: "ru",
+
     platforms: [
-        .iOS(.v14), .macOS(.v11), .watchOS(.v4), .tvOS(.v12)
+        .iOS(.v14),
+        .macOS(.v12),
+        .tvOS(.v14),
+        .watchOS(.v7),
     ],
+
     products: [
-        .library(
-            name: "Wand",
-            targets: ["Wand"]),
+        .library(name: "Wand_CoreLocation", targets: ["WandCoreLocation"])
     ],
+
+    dependencies: [
+        .package(url: "https://github.com/el-machine/Wand.git", from: "1.2.3"),
+        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.0")
+    ],
+
     targets: [
-        .target(
-            name: "Wand"),
-        .testTarget(
-            name: "WandTests",
-            dependencies: ["Wand"]),
-        .testTarget(
-            name: "WatchPlayTests",
-            dependencies: ["Wand"]),
+
+        .target(name: "WandCoreLocation", dependencies: ["Wand"] ),
+        .testTarget(name: "wandTests", dependencies:
+                        [
+                            "WandCoreLocation",
+                            .product(name: "Any_", package: "Any")
+                        ]
+                   )
+
     ]
 )

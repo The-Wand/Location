@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "Wand",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/el-machine/Wand.git",
+      "state" : {
+        "revision" : "875adec222e8fd2bd7fed4a508b13036c66b7ae8",
+        "version" : "1.1.2"
+      }
+    }
+  ],
+  "version" : 2
+}
