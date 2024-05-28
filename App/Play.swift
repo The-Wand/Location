@@ -20,10 +20,6 @@
 
 import SwiftUI
 
-import CoreLocation
-import Wand
-import WandCoreLocation
-
 @available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
 @main
 struct PlayApp: App {
@@ -41,13 +37,7 @@ struct ContentView: View {
     var body: some View {
 
         VStack {
-            Image(systemName: "wand.and.stars").onAppear() {
-                
-                |.one { (l: CLLocation) in
-                    print()
-                }
-
-            }
+            Image(systemName: "wand.and.stars")
             Text("Hello, world!")
         }
         .padding()

@@ -36,20 +36,28 @@ extension Weather: Asking, Wanded {
     @inline(__always)
     public
     static
-    func wand<T>(_ wand: Wand, asks: Ask<T>) {
+    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
 
-        
+        //Save ask
+        guard wand.answer(the: ask) else {
+            return
+        }
+
+        //Request for a first time
+
+        //Prepare context
         let task  = { (location: CLLocation) in do {
 
             let service: WeatherService = wand.obtain()
 
-            let weather = try! await service.weather(for: location)
+            let weather = try await service.weather(for: location)
             wand.add(weather)
 
         } catch {
             wand.add(error)
         }}
 
+        //Make request
         if let location: CLLocation = wand.get() {
 
             Task {
@@ -58,7 +66,7 @@ extension Weather: Asking, Wanded {
 
         } else {
 
-            wand | { (location: CLLocation) in
+            wand | .once(ask.once) { (location: CLLocation) in
 
                 Task {
                     await task(location)

@@ -27,16 +27,16 @@ import Wand
 
 class CoreLocation_Tests: XCTestCase {
     
-//        func test_Nil_to_CLLocation_every() {
-//            let e = expectation()
-//            e.assertForOverFulfill = false
-//    
-//            |.every { (location: CLLocation) in
-//                e.fulfill()
-//            }
-//    
-//            waitForExpectations()
-//        }
+        func test_Nil_to_CLLocation_every() {
+            let e = expectation()
+            e.assertForOverFulfill = false
+    
+            |.every { (location: CLLocation) in
+                e.fulfill()
+            }
+    
+            waitForExpectations()
+        }
     
         func test_Nil_to_CLLocation_once() {
             let e = expectation()
@@ -48,57 +48,47 @@ class CoreLocation_Tests: XCTestCase {
     
             waitForExpectations()
         }
-    
-//        func test_CLLocationManager() {
-//            XCTAssertNotNil(CLLocationManager.self|)
+
+//        func test_Options_to_CLLocation() {
+//            let e = expectation()
+//            e.assertForOverFulfill = false
+//    
+//            let accuracy = CLLocationAccuracy.any(in: [
+//                kCLLocationAccuracyBestForNavigation,
+//                kCLLocationAccuracyBest,
+//                kCLLocationAccuracyNearestTenMeters,
+//                kCLLocationAccuracyHundredMeters,
+//                kCLLocationAccuracyKilometer,
+//                kCLLocationAccuracyThreeKilometers
+//            ])
+//            let distance = ((100...420)| as Int)| as Double
+//    
+//            let pipe: Wand = ["CLLocationAccuracy": accuracy,
+//                                  "CLLocationDistance": distance]
+//            let piped = pipe.context
+//    
+//            pipe | .one { (location: CLLocation) in
+//                e.fulfill()
+//            }
+//    
+//    
+//            let manager: CLLocationManager = pipe.obtain()
+//            XCTAssertEqual(manager.desiredAccuracy,
+//                           piped["CLLocationAccuracy"] as! CLLocationAccuracy)
+//            XCTAssertEqual(manager.distanceFilter,
+//                           piped["CLLocationDistance"] as! CLLocationDistance)
+//    
+//            waitForExpectations()
 //        }
+
+        func test_CLLocationManager() {
+            XCTAssertNotNil(CLLocationManager.self|)
+        }
     
     }
     
-    #endif
+#endif
 
-//    func test_CLLocation() {
-//        let e = expectation()
-//        e.assertForOverFulfill = false
-//
-//        |.one { (location: CLLocation) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
-//
-//    func test_CLLocation_options() {
-//        let e = expectation()
-//        e.assertForOverFulfill = false
-//
-//        let accuracy = CLLocationAccuracy.any(in: [
-//            kCLLocationAccuracyBestForNavigation,
-//            kCLLocationAccuracyBest,
-//            kCLLocationAccuracyNearestTenMeters,
-//            kCLLocationAccuracyHundredMeters,
-//            kCLLocationAccuracyKilometer,
-//            kCLLocationAccuracyThreeKilometers
-//        ])
-//        let distance = ((100...420)| as Int)| as Double
-//
-//        let pipe: Wand = ["CLLocationAccuracy": accuracy,
-//                              "CLLocationDistance": distance]
-//        let piped = pipe.context
-//
-//        pipe | .one { (location: CLLocation) in
-//            e.fulfill()
-//        }
-//
-//
-//        let manager: CLLocationManager = pipe.obtain()
-//        XCTAssertEqual(manager.desiredAccuracy,
-//                       piped["CLLocationAccuracy"] as! CLLocationAccuracy)
-//        XCTAssertEqual(manager.distanceFilter,
-//                       piped["CLLocationDistance"] as! CLLocationDistance)
-//
-//        waitForExpectations()
-//    }
 //
 //    func test_CLAuthorizationStatus() {
 //        let e = expectation()

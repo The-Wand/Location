@@ -47,13 +47,10 @@ extension CLLocationManager: Obtain {
     
 }
 
-public
 extension CLLocationManager {
-    
-    public
+
     class Delegate: NSObject, CLLocationManagerDelegate, Wanded {
 
-        public
         func locationManager(_ manager: CLLocationManager,
                              didUpdateLocations locations: [CLLocation]) {
 
@@ -67,8 +64,7 @@ extension CLLocationManager {
 
         }
 
-        public
-        func locationManager(_ manager: CLLocationManager, 
+        func locationManager(_ manager: CLLocationManager,
                              didFailWithError error: Error) {
 
             isWanded?.add(error)
@@ -76,7 +72,6 @@ extension CLLocationManager {
 
         #if !os(visionOS)
 
-            public
             func locationManager(_ manager: CLLocationManager,
                                  didChangeAuthorization status: CLAuthorizationStatus) {
                 isWanded?.add(status)
