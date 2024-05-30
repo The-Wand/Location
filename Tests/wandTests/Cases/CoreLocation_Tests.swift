@@ -20,10 +20,12 @@
 
 #if canImport(CoreLocation)
 import CoreLocation
-import XCTest
 
+import Any_
 import WandCoreLocation
 import Wand
+
+import XCTest
 
 class CoreLocation_Tests: XCTestCase {
     
@@ -88,21 +90,3 @@ class CoreLocation_Tests: XCTestCase {
     }
     
 #endif
-
-//
-//    func test_CLAuthorizationStatus() {
-//        let e = expectation()
-//        e.assertForOverFulfill = false
-//
-//        |.one { (status: CLAuthorizationStatus) in
-//            e.fulfill()
-//        }
-//
-//        waitForExpectations()
-//    }
-//
-//    func test_CLLocationManager() {
-//        XCTAssertNotNil(self| as CLLocationManager)
-//    }
-//
-//}

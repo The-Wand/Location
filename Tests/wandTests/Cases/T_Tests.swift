@@ -20,10 +20,11 @@
 
 //#if canImport(<#T#>) //&& !targetEnvironment(simulator) && !os(macOS)
 //import CoreMotion
-//import XCTest
 //
 //import Wand_<#T#>
 //import Wand
+//
+//import XCTest
 //
 //class <#T#>_Tests: XCTestCase {
 //

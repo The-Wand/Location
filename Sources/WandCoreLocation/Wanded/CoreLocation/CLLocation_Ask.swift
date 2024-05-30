@@ -39,7 +39,7 @@ extension CLLocation: AskingNil, Wanded {
     static func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
 
         //Save ask
-        guard wand.answer(the: ask) else {
+        guard wand.answer(the: ask, check: true) else {
             return
         }
 
