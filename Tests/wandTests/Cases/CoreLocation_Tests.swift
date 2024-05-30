@@ -19,6 +19,7 @@
 /// 2020 El Machine
 
 #if canImport(CoreLocation)
+import Foundation
 import CoreLocation
 
 import Any_
@@ -28,65 +29,89 @@ import Wand
 import XCTest
 
 class CoreLocation_Tests: XCTestCase {
-    
-        func test_Nil_to_CLLocation_every() {
-            let e = expectation()
-            e.assertForOverFulfill = false
-    
-            |.every { (location: CLLocation) in
-                e.fulfill()
-            }
-    
-            waitForExpectations()
-        }
-    
-        func test_Nil_to_CLLocation_once() {
-            let e = expectation()
-            e.assertForOverFulfill = true
-    
-            |.one { (location: CLLocation) in
-                e.fulfill()
-            }
-    
-            waitForExpectations()
+
+    weak var wand: Wand?
+
+    func test_Nil_to_CLLocation_every() {
+        let e = expectation()
+        e.assertForOverFulfill = false
+
+        |.every { (location: CLLocation) in
+            e.fulfill()
         }
 
-//        func test_Options_to_CLLocation() {
-//            let e = expectation()
-//            e.assertForOverFulfill = false
-//    
-//            let accuracy = CLLocationAccuracy.any(in: [
-//                kCLLocationAccuracyBestForNavigation,
-//                kCLLocationAccuracyBest,
-//                kCLLocationAccuracyNearestTenMeters,
-//                kCLLocationAccuracyHundredMeters,
-//                kCLLocationAccuracyKilometer,
-//                kCLLocationAccuracyThreeKilometers
-//            ])
-//            let distance = ((100...420)| as Int)| as Double
-//    
-//            let pipe: Wand = ["CLLocationAccuracy": accuracy,
-//                                  "CLLocationDistance": distance]
-//            let piped = pipe.context
-//    
-//            pipe | .one { (location: CLLocation) in
-//                e.fulfill()
-//            }
-//    
-//    
-//            let manager: CLLocationManager = pipe.obtain()
-//            XCTAssertEqual(manager.desiredAccuracy,
-//                           piped["CLLocationAccuracy"] as! CLLocationAccuracy)
-//            XCTAssertEqual(manager.distanceFilter,
-//                           piped["CLLocationDistance"] as! CLLocationDistance)
-//    
-//            waitForExpectations()
-//        }
-
-        func test_CLLocationManager() {
-            XCTAssertNotNil(CLLocationManager.self|)
-        }
-    
+        waitForExpectations()
     }
-    
+
+    func test_Nil_to_CLLocation_once() {
+        let e = expectation()
+        e.assertForOverFulfill = true
+
+        |.one { (location: CLLocation) in
+            e.fulfill()
+        }
+
+        waitForExpectations()
+    }
+
+    func test_Options_to_CLLocation() {
+        let e = expectation()
+
+        let accuracy = Set([
+            kCLLocationAccuracyBestForNavigation,
+            kCLLocationAccuracyBest,
+            kCLLocationAccuracyNearestTenMeters,
+            kCLLocationAccuracyHundredMeters,
+            kCLLocationAccuracyKilometer,
+            kCLLocationAccuracyThreeKilometers
+        ]).first!
+
+        let distance: CLLocationDistance = .random(in: 100...420)
+
+        let wand: Wand = ["CLLocationAccuracy": accuracy,
+                          "CLLocationDistance": distance]
+        self.wand = wand
+
+        wand | .one { (location: CLLocation) in
+            e.fulfill()
+        }
+
+        let context = wand.context
+
+        let manager: CLLocationManager = wand.obtain()
+        XCTAssertEqual(manager.desiredAccuracy,
+                       context["CLLocationAccuracy"] as! CLLocationAccuracy)
+        XCTAssertEqual(manager.distanceFilter,
+                       context["CLLocationDistance"] as! CLLocationDistance)
+
+        waitForExpectations()
+    }
+
+    func test_CLLocation_to_Ask() {
+        let e = expectation()
+
+        let location =  CLLocation.any
+
+        location | .one { (asked: CLLocation) in
+
+            if asked === location {
+                e.fulfill()
+            }
+
+        }
+        self.wand = location.isWanded
+
+        waitForExpectations()
+    }
+
+    func test_CLLocationManager() {
+        XCTAssertNotNil(CLLocationManager.self|)
+    }
+
+    func test_closed() throws {
+        XCTAssertNil(wand)
+    }
+
+}
+
 #endif
