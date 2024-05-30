@@ -27,6 +27,7 @@ import Wand
 
 import XCTest
 
+@available(macOS, unavailable)
 class CLAuthorizationStatus_Tests: XCTestCase {
 
     weak
