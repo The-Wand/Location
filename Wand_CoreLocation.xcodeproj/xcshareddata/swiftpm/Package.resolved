@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
-      "identity" : "Wand",
+      "identity" : "any",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/el-machine/Any.git",
+      "state" : {
+        "revision" : "6e6440aaf6a2a1b183aa22d85e29a2058bd73b42",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "wand",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/el-machine/Wand.git",
       "state" : {
-        "revision" : "875adec222e8fd2bd7fed4a508b13036c66b7ae8",
-        "version" : "1.1.3"
+        "revision" : "2135df9ccc99a4d71bbf8b7672369c4e8f0e7622",
+        "version" : "1.2.5"
       }
     }
   ],
