@@ -46,7 +46,7 @@ extension CLAuthorizationStatus: AskingNil, Wanded {
 
         //Prepare context
         let source: CLLocationManager       = wand.obtain()
-        let asking: CLAuthorizationStatus?  = wand.get()
+        let asking: CLAuthorizationStatus?  = wand.extract()
 
         //Make request
         #if APPCLIP || os(tvOS) || os(visionOS)

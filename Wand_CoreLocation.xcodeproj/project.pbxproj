@@ -17,11 +17,13 @@
 		615159132BF76A8C001646EA /* Wand_CoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_CoreLocation */; };
 		6162625428BC8E2B00D63EA5 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		6162625828BC8E2B00D63EA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
-		61AED4C32C0602F500279993 /* CoreLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CoreLocation_Tests.swift */; };
-		61AED4C42C0602F500279993 /* CoreLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CoreLocation_Tests.swift */; };
+		61AED4C32C0602F500279993 /* CLLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */; };
+		61AED4C42C0602F500279993 /* CLLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */; };
 		61AED4C92C0602F500279993 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4C12C0602F500279993 /* Unit.swift */; };
 		61AED4CA2C0602F500279993 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4C12C0602F500279993 /* Unit.swift */; };
 		61D3F1712C08592D00D61B31 /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 61D3F1702C08592D00D61B31 /* Any_ */; };
+		61F0A2E92C08826700A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */; };
+		61F0A2EA2C08826800A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */; };
 		61F648C72BEA122900C2625C /* Wand_CoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_CoreLocation */; };
 /* End PBXBuildFile section */
 
@@ -59,11 +61,11 @@
 		618F8F182BEA00D400618E7C /* testPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = testPlan.xctestplan; sourceTree = "<group>"; };
 		618F8F272BEA04BF00618E7C /* watchTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = watchTestPlan.xctestplan; sourceTree = "<group>"; };
 		61A37BB42BE24A5F007B7FEE /* PlayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		61AED4BD2C0602F500279993 /* CoreLocation_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocation_Tests.swift; sourceTree = "<group>"; };
-		61AED4BE2C0602F500279993 /* T_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = T_Tests.swift; sourceTree = "<group>"; };
+		61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocation_Tests.swift; sourceTree = "<group>"; };
 		61AED4C12C0602F500279993 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		61B1B41C2BC9696200BD1F36 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		61B464E72BEB76B70064B4C1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus_Tests.swift; sourceTree = "<group>"; };
 		OBJ_141 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_142 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +148,8 @@
 		61AED4BF2C0602F500279993 /* Cases */ = {
 			isa = PBXGroup;
 			children = (
-				61AED4BD2C0602F500279993 /* CoreLocation_Tests.swift */,
-				61AED4BE2C0602F500279993 /* T_Tests.swift */,
+				61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */,
+				61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */,
 				6129E9762C06416200C606A4 /* WeatherKit_Tests.swift */,
 			);
 			path = Cases;
@@ -376,7 +378,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61AED4CA2C0602F500279993 /* Unit.swift in Sources */,
-				61AED4C42C0602F500279993 /* CoreLocation_Tests.swift in Sources */,
+				61AED4C42C0602F500279993 /* CLLocation_Tests.swift in Sources */,
+				61F0A2E92C08826700A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */,
 				6129E9782C06416200C606A4 /* WeatherKit_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,7 +397,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				61AED4C92C0602F500279993 /* Unit.swift in Sources */,
-				61AED4C32C0602F500279993 /* CoreLocation_Tests.swift in Sources */,
+				61AED4C32C0602F500279993 /* CLLocation_Tests.swift in Sources */,
+				61F0A2EA2C08826800A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */,
 				613F9E532C086A560014534F /* WeatherKit_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,7 +437,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_PREVIEWS = YES;
@@ -494,7 +498,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -548,7 +552,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -596,7 +600,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -658,7 +662,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -746,7 +750,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -809,7 +813,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -863,7 +867,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 275;
+				CURRENT_PROJECT_VERSION = 351;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
