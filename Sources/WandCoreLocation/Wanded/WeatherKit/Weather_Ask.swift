@@ -46,33 +46,23 @@ extension Weather: Asking, Wanded {
         //Request for a first time
 
         //Prepare context
-        let task  = { (location: CLLocation) in do {
+        wand | .once(ask.once) { [weak wand] (location: CLLocation) in
 
-            let service: WeatherService = wand.obtain()
+            Task { [weak wand] in  do {
 
-            let weather = try await service.weather(for: location)
-            wand.add(weather)
-
-        } catch {
-            wand.add(error)
-        }}
-
-        //Make request
-        if let location: CLLocation = wand.get() {
-
-            Task {
-                await task(location)
-            }
-
-        } else {
-
-            wand | .once(ask.once) { (location: CLLocation) in
-
-                Task {
-                    await task(location)
+                guard let wand else {
+                    return
                 }
 
-            }
+                let service: WeatherService = wand.obtain()
+
+                //Make request
+                let weather = try await service.weather(for: location)
+                wand.add(weather)
+
+            } catch {
+                wand?.add(error)
+            }}
 
         }
 
@@ -81,12 +71,3 @@ extension Weather: Asking, Wanded {
 }
 
 #endif
-//
-//extension Wand {
-//
-//    func get<T>(for key: String? = nil, or a: @autoclosure ()->(T) ) -> T {
-//        a()
-//        let object: T = get(for: key)
-//    }
-//
-//}

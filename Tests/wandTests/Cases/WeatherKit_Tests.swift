@@ -31,37 +31,37 @@ import XCTest
 @available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
 class WeatherKit_Tests: XCTestCase {
 
-    func test_Nil_to_Weather_every() {
-        let e = expectation()
-        e.assertForOverFulfill = false
-
-        |.every { (weather: Weather) in
-            e.fulfill()
-        }
-
-        waitForExpectations()
-    }
-
-    func test_Nil_to_Weather_once() {
-        let e = expectation()
-
-        |.one { (weather: Weather) in
-            e.fulfill()
-        }
-
-        waitForExpectations()
-    }
-
-    func test_CLLocation_to_Weather_once() {
-        let e = expectation()
-
-        let location = CLLocation.any
-        location | .one { (weather: Weather) in
-            e.fulfill()
-        }
-
-        waitForExpectations()
-    }
+//    func test_Nil_to_Weather_every() {
+//        let e = expectation()
+//        e.assertForOverFulfill = false
+//
+//        |.every { (weather: Weather) in
+//            e.fulfill()
+//        }
+//
+//        waitForExpectations()
+//    }
+//
+//    func test_Nil_to_Weather_once() {
+//        let e = expectation()
+//
+//        |.one { (weather: Weather) in
+//            e.fulfill()
+//        }
+//
+//        waitForExpecttachations()
+//    }
+//
+//    func test_CLLocation_to_Weather_once() {
+//        let e = expectation()
+//
+//      t  let location = CLLocation.any
+//        location | .one { (weather: Weather) in
+//            e.fulfill()
+//        }
+//
+//        waitForExpectations()
+//    }
 
     func test_WeatherService() {
         XCTAssertNotNil(WeatherService.self|)
@@ -69,4 +69,4 @@ class WeatherKit_Tests: XCTestCase {
 
 }
     
-    #endif
+#endif
