@@ -28,6 +28,7 @@ import Wand
 import XCTest
 
 @available(macOS, unavailable)
+final
 class CLAuthorizationStatus_Tests: XCTestCase {
 
     weak
@@ -79,6 +80,40 @@ class CLAuthorizationStatus_Tests: XCTestCase {
         }
 
         waitForExpectations(timeout: .default * 4)
+    }
+
+    func test_CLAuthorizationStatus_one_Performance() {
+
+        measure(metrics: .default) {
+
+            |.one { (status: CLAuthorizationStatus) in
+
+                print("""
+                        .0 -------------------------------
+                        \(status)
+                        🧪 -------------------------------
+                      """)
+            }
+
+        }
+
+    }
+
+    func test_CLAuthorizationStatus_subscribe_Performance() {
+
+        measure(metrics: .default) {
+
+            let wand = |.every { (status: CLAuthorizationStatus) in
+
+                print("""
+                        .0 -------------------------------
+                        \(status)
+                        🧪 -------------------------------
+                      """)
+            }
+
+        }
+
     }
 
 

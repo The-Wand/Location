@@ -34,6 +34,20 @@ extension TimeInterval {
 
 }
 
+///Performance
+extension [XCTMetric] {
+
+    static
+    var `default`: Self = {[
+        XCTCPUMetric(),
+        XCTClockMetric(),
+        XCTMemoryMetric(),
+        XCTStorageMetric(),
+    ]}()
+
+}
+
+///Expectations
 extension XCTestCase {
 
     func expectation(function: String = #function) -> XCTestExpectation {

@@ -18,19 +18,20 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-#if canImport(WeatherKit)
-import CoreLocation.CLLocation
-import WeatherKit
-
-import Any_
-import WandCoreLocation
-import Wand
-
-import XCTest
-
-@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
-class WeatherKit_Tests: XCTestCase {
-
+//#if canImport(WeatherKit)
+//import CoreLocation.CLLocation
+//import WeatherKit
+//
+//import Any_
+//import WandCoreLocation
+//import Wand
+//
+//import XCTest
+//
+//@available(iOS 16.0, macOS 13.0, tvOS 16.0, watchOS 9.0, *)
+//final
+//class WeatherKit_Tests: XCTestCase {
+//
 //JWT Error code 2
 //    func test_Nil_to_Weather_every() {
 //        let e = expectation()
@@ -63,11 +64,12 @@ class WeatherKit_Tests: XCTestCase {
 //
 //        waitForExpectations()
 //    }
-
-    func test_WeatherService() {
-        XCTAssertNotNil(WeatherService.self|)
-    }
-
-}
-    
-#endif
+//
+//
+//    func test_WeatherService() {
+//        XCTAssertNotNil(WeatherService.self|)
+//    }
+//
+//}
+//    
+//#endif

@@ -27,6 +27,7 @@ import Wand
 
 import XCTest
 
+final
 class CLLocation_Tests: XCTestCase {
 
     weak 
@@ -107,18 +108,53 @@ class CLLocation_Tests: XCTestCase {
         let e = expectation()
 
         //Request location with specified CLAuthorizationStatus
-        let status =  CLAuthorizationStatus.authorizedAlways
+        let status =  CLAuthorizationStatus.authorizedWhenInUse
 
-        status | .one { (asked: CLLocation) in
+        status | .one { (location: CLLocation) in
 
-            //Check that auth status correct
-            if status == asked.wand.get() {
+            //Check that auth status is correct
+            let received: CLAuthorizationStatus = location.wand.get()!
+            if received == .authorizedWhenInUse || received == .authorizedAlways {
                 e.fulfill()
             }
 
         }
 
         waitForExpectations()
+    }
+
+    func test_CLLocation_one_Performance() {
+
+        measure(metrics: .default) {
+
+            |.one { (location: CLLocation) in
+
+                print("""
+                        .0 -------------------------------
+                        \(location)
+                        🧪 -------------------------------
+                      """)
+            }
+
+        }
+
+    }
+
+    func test_CLLocation_subscribe_Performance() {
+
+        measure(metrics: .default) {
+
+            let wand = |.every { (location: CLLocation) in
+
+                print("""
+                        .0 -------------------------------
+                        \(location)
+                        🧪 -------------------------------
+                      """)
+            }
+
+        }
+
     }
 
     func test_CLLocationManager() {

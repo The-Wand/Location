@@ -38,8 +38,8 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/el-machine/Wand.git", from: "1.2.7"),
-        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.0")
+        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.0"),
+        .package(url: "https://github.com/el-machine/Wand.git", from: "1.2.9"),
     ],
 
     targets: [
@@ -47,8 +47,8 @@ let package = Package(
         .target(name: "WandCoreLocation", dependencies: ["Wand"] ),
         .testTarget(name: "wandTests", dependencies:
                         [
+                            .product(name: "Any_", package: "Any"),
                             "WandCoreLocation",
-                            .product(name: "Any_", package: "Any")
                         ]
                    )
 
