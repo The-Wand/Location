@@ -36,7 +36,8 @@ extension CLLocation: AskingNil, Wanded {
 
     @inline(__always)
     public
-    static func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    static 
+    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
 
         //Save ask
         guard wand.answer(the: ask, check: true) else {
@@ -51,8 +52,6 @@ extension CLLocation: AskingNil, Wanded {
         //Set the cleaner
         wand.setCleaner(for: ask) {
             source.stopUpdatingLocation()
-
-//            Wand.log("|🌜 Cleaned '\(ask.key)'")
         }
 
         //Make request

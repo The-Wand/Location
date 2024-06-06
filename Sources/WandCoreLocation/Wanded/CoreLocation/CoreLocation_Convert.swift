@@ -17,6 +17,7 @@
 ///
 /// Created by Alex Kozin
 /// 2020 El Machine
+
 #if canImport(CoreLocation)
 import CoreLocation.CLLocation
 import Wand
@@ -25,44 +26,63 @@ import Wand
 ///
 /// let location: CLLocation = coordinate|
 ///
-
-//CLLocation
 @inline(__always)
-public 
-postfix func |(coordinate: CLLocationCoordinate2D) -> CLLocation {
+postfix
+public
+func |(coordinate: CLLocationCoordinate2D) -> CLLocation {
     CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 }
 
-//CLLocationCoordinate2D
+/// Convert
+///
+/// let location: CLLocation = (lat, lon)|
+///
 @inline(__always)
-public 
-postfix func |(degrees: (CLLocationDegrees, CLLocationDegrees)) -> CLLocationCoordinate2D {
-    CLLocationCoordinate2D(latitude: degrees.0, longitude: degrees.1)
+postfix
+public
+func |(coordinate: (lat: CLLocationDegrees, lon: CLLocationDegrees)) -> CLLocationCoordinate2D {
+    CLLocationCoordinate2D(latitude: coordinate.lat, longitude: coordinate.lon)
 }
 
+/// Convert
+///
+/// let coordinate: CLLocationCoordinate2D = location|
+///
 @inline(__always)
-public 
-postfix func |(location: CLLocation) -> CLLocationCoordinate2D {
+postfix
+public
+func |(location: CLLocation) -> CLLocationCoordinate2D {
     location.coordinate
 }
 
-//CLLocationDistance
+/// Convert
+///
+/// let distance: CLLocationDistance? = to | from
+///
 @inline(__always)
 public 
 func | (to: CLLocationCoordinate2D?, from: CLLocationCoordinate2D?) -> CLLocationDistance? {
-    guard let to = to, let from = from else {
+    guard let to, let from else {
         return nil
     }
 
     return to | from
 }
 
+/// Convert
+///
+/// let distance: CLLocationDistance = to | from
+///
 @inline(__always)
 public 
 func | (to: CLLocationCoordinate2D, from: CLLocationCoordinate2D) -> CLLocationDistance {
     to|.distance(from: from|)
 }
 
+/// Convert
+///
+/// let distance: CLLocationDistance = toLocation | fromLocation
+///
 @inline(__always)
 public 
 func | (to: CLLocation, from: CLLocation) -> CLLocationDistance {

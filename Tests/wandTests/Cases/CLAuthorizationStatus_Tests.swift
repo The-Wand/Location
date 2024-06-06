@@ -87,12 +87,7 @@ class CLAuthorizationStatus_Tests: XCTestCase {
         measure(metrics: .default) {
 
             |.one { (status: CLAuthorizationStatus) in
-
-                print("""
-                        .0 -------------------------------
-                        \(status)
-                        🧪 -------------------------------
-                      """)
+                print("🧪 \(status)")
             }
 
         }
@@ -103,13 +98,8 @@ class CLAuthorizationStatus_Tests: XCTestCase {
 
         measure(metrics: .default) {
 
-            let wand = |.every { (status: CLAuthorizationStatus) in
-
-                print("""
-                        .0 -------------------------------
-                        \(status)
-                        🧪 -------------------------------
-                      """)
+            |.every { (status: CLAuthorizationStatus) in
+                print("🧪 \(status)")
             }
 
         }

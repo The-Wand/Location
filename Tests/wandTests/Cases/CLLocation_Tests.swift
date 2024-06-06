@@ -128,12 +128,7 @@ class CLLocation_Tests: XCTestCase {
         measure(metrics: .default) {
 
             |.one { (location: CLLocation) in
-
-                print("""
-                        .0 -------------------------------
-                        \(location)
-                        🧪 -------------------------------
-                      """)
+                print("🧪 \(location)")
             }
 
         }
@@ -144,13 +139,8 @@ class CLLocation_Tests: XCTestCase {
 
         measure(metrics: .default) {
 
-            let wand = |.every { (location: CLLocation) in
-
-                print("""
-                        .0 -------------------------------
-                        \(location)
-                        🧪 -------------------------------
-                      """)
+            |.every { (location: CLLocation) in
+                print("🧪 \(location)")
             }
 
         }

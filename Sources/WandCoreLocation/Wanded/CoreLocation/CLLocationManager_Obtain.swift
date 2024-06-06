@@ -51,6 +51,7 @@ extension CLLocationManager {
 
     class Delegate: NSObject, CLLocationManagerDelegate, Wanded {
 
+        @inlinable
         func locationManager(_ manager: CLLocationManager,
                              didUpdateLocations locations: [CLLocation]) {
 
@@ -64,6 +65,7 @@ extension CLLocationManager {
 
         }
 
+        @inlinable
         func locationManager(_ manager: CLLocationManager,
                              didFailWithError error: Error) {
 
@@ -72,6 +74,7 @@ extension CLLocationManager {
 
         #if !os(visionOS)
 
+            @inlinable
             func locationManager(_ manager: CLLocationManager,
                                  didChangeAuthorization status: CLAuthorizationStatus) {
                 isWanded?.add(status)

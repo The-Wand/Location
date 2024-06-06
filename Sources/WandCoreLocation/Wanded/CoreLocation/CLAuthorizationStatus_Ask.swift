@@ -31,11 +31,13 @@ import Wand
 /// CLAuthorizationStatus.authorizedAlways | { (scope: CLAuthorizationStatus) in
 ///
 /// }
+///
 extension CLAuthorizationStatus: AskingNil, Wanded {
 
     @inline(__always)
     public
-    static func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    static 
+    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
 
         //Save ask
         guard wand.answer(the: ask) else {
@@ -50,7 +52,7 @@ extension CLAuthorizationStatus: AskingNil, Wanded {
 
         //Make request
         #if APPCLIP || os(tvOS) || os(visionOS)
-
+        
             source.requestWhenInUseAuthorization()
 
         #else
