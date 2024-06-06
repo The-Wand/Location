@@ -104,6 +104,7 @@ class CLLocation_Tests: XCTestCase {
         waitForExpectations()
     }
 
+    @available(macOS, unavailable)
     func test_CLAuthorizationStatus_to_CLLocation() {
         let e = expectation()
 
