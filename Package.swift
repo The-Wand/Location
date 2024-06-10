@@ -34,7 +34,7 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Wand_CoreLocation", targets: ["WandCoreLocation"])
+        .library(name: "Wand_CoreLocation", targets: ["Wand_CoreLocation"])
     ],
 
     dependencies: [
@@ -44,11 +44,11 @@ let package = Package(
 
     targets: [
 
-        .target(name: "WandCoreLocation", dependencies: ["Wand"] ),
+        .target(name: "Wand_CoreLocation", dependencies: ["Wand"] ),
         .testTarget(name: "wandTests", dependencies:
                         [
                             .product(name: "Any_", package: "Any"),
-                            "WandCoreLocation",
+                            "Wand_CoreLocation",
                         ]
                    )
 

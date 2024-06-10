@@ -13,11 +13,11 @@
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
-	<string>FMWK</string>
+	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.1.1</string>
 	<key>CFBundleVersion</key>
-	<string>375</string>
+	<string>379</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>testing 🧑‍💻</string>
 	<key>NSLocationAlwaysUsageDescription</key>
