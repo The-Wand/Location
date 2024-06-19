@@ -32,27 +32,15 @@ public
 func |(coordinate: CLLocationCoordinate2D) -> CLLocation {
     CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 }
-
 /// Convert
 ///
-/// let location: CLLocation = (lat, lon)|
+/// let location: CLLocation = coordinate|
 ///
 @inline(__always)
 postfix
 public
-func |(coordinate: (lat: CLLocationDegrees, lon: CLLocationDegrees)) -> CLLocationCoordinate2D {
-    CLLocationCoordinate2D(latitude: coordinate.lat, longitude: coordinate.lon)
-}
-
-/// Convert
-///
-/// let coordinate: CLLocationCoordinate2D = location|
-///
-@inline(__always)
-postfix
-public
-func |(location: CLLocation) -> CLLocationCoordinate2D {
-    location.coordinate
+func |(coordinate: (lat: CLLocationDegrees, lon: CLLocationDegrees)) -> CLLocation {
+    CLLocation(latitude: coordinate.lat, longitude: coordinate.lon)
 }
 
 /// Convert
