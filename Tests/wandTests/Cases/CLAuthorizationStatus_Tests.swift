@@ -18,7 +18,7 @@
 /// Created by Alex Kozin
 /// 2020 El Machine
 
-#if canImport(CoreLocation) //&& !targetEnvironment(simulator) //Test with Host App
+#if canImport(CoreLocation) && !targetEnvironment(simulator) //Test with Host App
 import CoreLocation
 
 import Any_
