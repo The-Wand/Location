@@ -55,7 +55,7 @@ extension CLLocation: AskingNil, Wanded {
         }
 
         //Make request
-        wand | .Option { (status: CLAuthorizationStatus) -> Bool in
+        wand | ask.optionWhile { (status: CLAuthorizationStatus) -> Bool in
 
             guard status != .notDetermined else {
                 return true
