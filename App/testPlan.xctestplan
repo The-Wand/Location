@@ -4,14 +4,15 @@
       "id" : "114DE82F-DC01-42DA-9FAB-990527935304",
       "name" : "Test Scheme Action",
       "options" : {
-
+        "locationScenario" : {
+          "identifier" : "..\/..\/App\/wend_.gpx"
+        }
       }
     }
   ],
   "defaultOptions" : {
     "locationScenario" : {
-      "identifier" : "San Francisco, CA, USA",
-      "referenceType" : "built-in"
+      "identifier" : "..\/..\/App\/wend_.gpx"
     },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Wand-Tools.xcodeproj",
