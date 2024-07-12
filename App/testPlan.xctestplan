@@ -1,18 +1,16 @@
 {
   "configurations" : [
     {
-      "id" : "114DE82F-DC01-42DA-9FAB-990527935304",
+      "id" : "7ADFED2F-B2A9-4B68-966E-124BE89AB853",
       "name" : "Test Scheme Action",
       "options" : {
-        "locationScenario" : {
-          "identifier" : "..\/..\/App\/wend_.gpx"
-        }
+
       }
     }
   ],
   "defaultOptions" : {
     "locationScenario" : {
-      "identifier" : "..\/..\/App\/wend_.gpx"
+      "identifier" : "..\/..\/App\/wend.gpx"
     },
     "targetForVariableExpansion" : {
       "containerPath" : "container:Wand-Tools.xcodeproj",

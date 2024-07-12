@@ -20,6 +20,11 @@
 
 import SwiftUI
 
+import CoreLocation
+
+import Wand_CoreLocation
+import Wand
+
 @available(iOS 14, macOS 12, tvOS 14, watchOS 7, *)
 @main
 struct PlayApp: App {
@@ -37,8 +42,19 @@ struct ContentView: View {
     var body: some View {
 
         VStack {
-            Image(systemName: "wand.and.stars")
-            Text("Hello, world!")
+            Image(systemName: "wand.and.stars").onAppear() {
+
+                let region: CLCircularRegion = (54.9735662, 82.899939)|
+
+
+                region | .didExit { (region: CLCircularRegion) in
+
+                    print("exit")
+
+                }
+
+            }
+            Text("Hello, world!") 
         }
         .padding()
 

@@ -85,8 +85,8 @@
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "San Francisco, CA, USA"
-         referenceType = "1">
+         identifier = "../../App/wend.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction

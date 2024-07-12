@@ -106,29 +106,31 @@ class CLRegion_Tests: XCTestCase {
         waitForExpectations()
     }
     
-//    func test_CLRegion_didEnterRegion_Performance() {
-//
-//        measure(metrics: .default) {
-//
-//            |.one { (location: CLLocation) in
-//                print("🧪 \(location)")
-//            }
-//
-//        }
-//
-//    }
-//
-//    func test_CLRegion_didExitRegion_Performance() {
-//
-//        measure(metrics: .default) {
-//
-//            |.every { (location: CLLocation) in
-//                print("🧪 \(location)")
-//            }
-//
-//        }
-//
-//    }
+    func test_CLRegion_didEnterRegion_Performance() {
+
+        measure(metrics: .default) {
+
+            let region: CLRegion = (60.018497, 30.371871)|
+            region | .didEnter { (region: CLRegion) in
+                print("🧪 .didEnter \(region)")
+            }
+
+        }
+
+    }
+
+    func test_CLRegion_didExitRegion_Performance() {
+
+        measure(metrics: .default) {
+
+            let region: CLRegion = (60.018497, 30.371871)|
+            region | .didExit { (region: CLRegion) in
+                print("🧪 .didExit \(region)")
+            }
+
+        }
+
+    }
 
     func test_CLLocationManager() {
         XCTAssertNotNil(CLLocationManager.self|)

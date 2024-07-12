@@ -75,14 +75,14 @@ extension CLCircularRegion: Asking, Wanded {
         let regions: [CLRegion]? = wand.get()
 
         //Make request
-
         if let region {
 
             source.startMonitoring(for: region)
 
-            cleaner = {
-                source.stopMonitoring(for: region)
-            }
+            //Set the cleaner
+//            wand.setCleaner(for: ask) {
+//                source.stopMonitoring(for: region)
+//            }
 
         }
 
@@ -92,17 +92,15 @@ extension CLCircularRegion: Asking, Wanded {
                 source.startMonitoring(for: $0)
             }
 
-            cleaner = {
-                cleaner?()
-                regions.forEach {
-                    source.stopMonitoring(for: $0)
-                }
-            }
+//            //Set the cleaner
+//            wand.setCleaner(for: ask) {
+//                cleaner?()
+//                regions.forEach {
+//                    source.stopMonitoring(for: $0)
+//                }
+//            }
 
         }
-
-        //Set the cleaner
-        wand.setCleaner(for: ask, cleaner: cleaner!)
 
     }
 
