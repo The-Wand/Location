@@ -44,14 +44,15 @@ struct ContentView: View {
         VStack {
             Image(systemName: "wand.and.stars").onAppear() {
 
-                let region: CLCircularRegion = (54.9735662, 82.899939)|
 
-
-                region | .didExit { (region: CLCircularRegion) in
-
-                    print("exit")
-
-                }
+//                let region: CLCircularRegion = (54.9735662, 82.899939)|
+//
+//
+//                region | .didExit { (region: CLCircularRegion) in
+//
+//                    print("exit")
+//
+//                }
 
             }
             Text("Hello, world!") 
