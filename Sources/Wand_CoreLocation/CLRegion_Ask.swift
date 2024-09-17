@@ -52,6 +52,7 @@ extension Ask where T: CLCircularRegion {
 }
 
 @available(iOS 7.0, *)
+@available(visionOS, unavailable)
 extension CLCircularRegion: Asking, Wanded {
 
     @inline(__always)

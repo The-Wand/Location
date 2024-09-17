@@ -123,6 +123,8 @@ extension CLLocationManager {
         //        }
 
         @available(iOS 6.0, *)
+        @available(watchOS, unavailable)
+        @available(tvOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager,
                              didFinishDeferredUpdatesWithError error: (any Error)?) {
@@ -130,6 +132,8 @@ extension CLLocationManager {
         }
 
         @available(iOS 8.0, *)
+        @available(watchOS, unavailable)
+        @available(tvOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
             isWanded?.add(visit)
@@ -156,12 +160,18 @@ extension CLLocationManager {
 //        }
 //
         @available(iOS 4.0, *)
+        @available(watchOS, unavailable)
+        @available(tvOS, unavailable)
+        @available(visionOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
             isWanded?.add(region, for: Keys.didEnterRegion.rawValue)
         }
 
         @available(iOS 4.0, *)
+        @available(watchOS, unavailable)
+        @available(tvOS, unavailable)
+        @available(visionOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
             isWanded?.add(region, for: Keys.didExitRegion.rawValue)
