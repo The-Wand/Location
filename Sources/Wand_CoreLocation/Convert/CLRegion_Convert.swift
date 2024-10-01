@@ -26,28 +26,31 @@ import Wand
 ///
 /// let region: CLRegion = (lat, lon)|
 ///
+@available(visionOS, unavailable)
 @inline(__always)
 postfix
 public
 func |(center: (lat: CLLocationDegrees, lon: CLLocationDegrees)) -> CLCircularRegion {
-    .init(center: center|, radius: 111, identifier: String())
+    .init(center: center|, radius: 100, identifier: String())
 }
 
 /// Convert
 ///
 /// let region: CLRegion = center|
 ///
+@available(visionOS, unavailable)
 @inline(__always)
 postfix
 public
 func |(center: CLLocationCoordinate2D) -> CLCircularRegion {
-    .init(center: center, radius: 111, identifier: String())
+    .init(center: center, radius: 100, identifier: String())
 }
 
 /// Convert
 ///
 /// let region: CLRegion = (center, radius)|
 ///
+@available(visionOS, unavailable)
 @inline(__always)
 postfix
 public
@@ -59,6 +62,7 @@ func |(region: (center: CLLocationCoordinate2D, radius: CLLocationDistance)) -> 
 ///
 /// let region: CLRegion = (center, radius, id)|
 ///
+@available(visionOS, unavailable)
 @inline(__always)
 postfix
 public

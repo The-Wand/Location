@@ -45,10 +45,18 @@ struct ContentView: View {
             Image(systemName: "wand.and.stars").onAppear() {
 
 
-//                let region: CLCircularRegion = (54.9735662, 82.899939)|
+//                let status = CLAuthorizationStatus.authorizedAlways
+//                let region: CLCircularRegion = (55.033333, 82.916667)|
 //
+//                let wand = Wand()
+//                wand.store(status)
+//                wand.store(region)
 //
-//                region | .didExit { (region: CLCircularRegion) in
+//                wand | .didEnter { (region: CLCircularRegion) in
+//
+//                    print("enter")
+//
+//                } | .didExit { (region: CLCircularRegion) in
 //
 //                    print("exit")
 //

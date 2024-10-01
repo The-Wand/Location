@@ -33,25 +33,34 @@ extension Ask {
 
 }
 
+@available(tvOS, unavailable)
 @available(visionOS, unavailable)
 public
 extension Ask where T: CLCircularRegion {
 
+    public
+    enum Keys: String {
+        case didEnter = "CLCircularRegion.didEnter",
+             didExit = "CLCircularRegion.didExit"
+    }
+
     @inline(__always)
     static
     func didEnter(handler: @escaping (T)->() ) -> DidEnter {
-        .init(once: false, handler: handler)
+        .init(once: false, for: Keys.didEnter.rawValue, handler: handler)
     }
 
     @inline(__always)
     static
     func didExit(handler: @escaping (T)->() ) -> DidExit {
-        .init(once: false, handler: handler)
+        .init(once: false, for: Keys.didExit.rawValue, handler: handler)
     }
 
 }
 
 @available(iOS 7.0, *)
+@available(watchOS, unavailable)
+@available(tvOS, unavailable)
 @available(visionOS, unavailable)
 extension CLCircularRegion: Asking, Wanded {
 
@@ -61,7 +70,7 @@ extension CLCircularRegion: Asking, Wanded {
     func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
 
         //Save ask
-        guard wand.answer(the: ask, check: true) else {
+        guard wand.answer(the: ask) else {
             return
         }
 
@@ -70,39 +79,50 @@ extension CLCircularRegion: Asking, Wanded {
         //Prepare context
         let source: CLLocationManager = wand.obtain()
 
-        //TODO: Fix cleaners
-        var cleaner: ( ()->() )? = nil
-
-        let region: CLRegion? = wand.get()
-        let regions: [CLRegion]? = wand.get()
-
         //Make request
-        if let region {
+        wand | ask.optionWhile { (status: CLAuthorizationStatus) -> Bool in
 
-            source.startMonitoring(for: region)
-
-            //Set the cleaner
-//            wand.setCleaner(for: ask) {
-//                source.stopMonitoring(for: region)
-//            }
-
-        }
-
-        if let regions {
-
-            regions.forEach {
-                source.startMonitoring(for: $0)
+            guard status != .notDetermined else {
+                return true
             }
 
-//            //Set the cleaner
-//            wand.setCleaner(for: ask) {
-//                cleaner?()
-//                regions.forEach {
-//                    source.stopMonitoring(for: $0)
-//                }
-//            }
+            //TODO: Fix cleaners
+            var cleaner: ( ()->() )? = nil
 
+            let region: CLCircularRegion? = wand.get()
+            let regions: [CLCircularRegion]? = wand.get()
+
+            //Make request
+            if let region {
+
+                source.startMonitoring(for: region)
+
+                //Set the cleaner
+                wand.setCleaner(for: ask) {
+                    source.stopMonitoring(for: region)
+                }
+
+            }
+
+            if let regions {
+
+                regions.forEach {
+                    source.startMonitoring(for: $0)
+                }
+
+                //Set the cleaner
+                wand.setCleaner(for: ask) {
+                    cleaner?()
+                    regions.forEach {
+                        source.stopMonitoring(for: $0)
+                    }
+                }
+
+            }
+
+            return false
         }
+
 
     }
 

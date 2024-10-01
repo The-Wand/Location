@@ -62,7 +62,6 @@ extension CLAuthorizationStatus: AskingNil, Wanded {
                 case .authorizedAlways:
                     source.requestAlwaysAuthorization()
 
-
                 case .none, .authorizedWhenInUse:
                     source.requestWhenInUseAuthorization()
 

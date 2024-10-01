@@ -26,7 +26,7 @@ import Wand
 ///
 /// let manager: CLLocationManager = nil|
 ///
-extension CLLocationManager: Obtain {
+extension CLLocationManager: @retroactive Obtain {
 
     @inline(__always)
     public
@@ -51,18 +51,11 @@ extension CLLocationManager {
 
     class Delegate: NSObject, CLLocationManagerDelegate, Wanded {
 
-        enum Keys: String {
-
-            case didEnterRegion,
-                 didExitRegion
-
-        }
-
         @available(iOS 6.0, *)
         @inlinable
         func locationManager(_ manager: CLLocationManager,
                              didUpdateLocations locations: [CLLocation]) {
-
+            print("Loc")
             if let last = locations.last {
                 isWanded?.add(last)
             }
@@ -104,36 +97,22 @@ extension CLLocationManager {
 
 #endif
 
-        //        @available(iOS 14.0, *)
-        //        @inlinable
-        //        func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        //
-        //        }
-        //
-        //        @available(iOS 6.0, *)
-        //        @inlinable
-        //        func locationManagerDidPauseLocationUpdates(_ manager: CLLocationManager) {
-        //
-        //        }
-        //
-        //        @available(iOS 6.0, *)
-        //        @inlinable
-        //        func locationManagerDidResumeLocationUpdates(_ manager: CLLocationManager) {
-        //
-        //        }
+#if !os(tvOS) && !os(visionOS) && !os(watchOS)
 
-        @available(iOS 6.0, *)
-        @available(watchOS, unavailable)
-        @available(tvOS, unavailable)
         @inlinable
+        @available(iOS 6.0, *)
+        @available(tvOS, unavailable)
+        @available(visionOS, unavailable)
+        @available(watchOS, unavailable)
         func locationManager(_ manager: CLLocationManager,
                              didFinishDeferredUpdatesWithError error: (any Error)?) {
             isWanded?.add(error)
         }
 
         @available(iOS 8.0, *)
-        @available(watchOS, unavailable)
         @available(tvOS, unavailable)
+        @available(visionOS, unavailable)
+        @available(watchOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
             isWanded?.add(visit)
@@ -159,13 +138,16 @@ extension CLLocationManager {
 //
 //        }
 //
+
         @available(iOS 4.0, *)
-        @available(watchOS, unavailable)
         @available(tvOS, unavailable)
         @available(visionOS, unavailable)
+        @available(watchOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-            isWanded?.add(region, for: Keys.didEnterRegion.rawValue)
+            print("didEnterRegion")
+            isWanded?.add(region,
+                          for: Ask<CLCircularRegion>.Keys.didEnter.rawValue)
         }
 
         @available(iOS 4.0, *)
@@ -174,8 +156,12 @@ extension CLLocationManager {
         @available(visionOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-            isWanded?.add(region, for: Keys.didExitRegion.rawValue)
+            print("didExitRegion")
+            isWanded?.add(region,
+                          for: Ask<CLCircularRegion>.Keys.didExit.rawValue)
         }
+
+#endif
 //
 //        @available(iOS 5.0, *)
 //        @inlinable

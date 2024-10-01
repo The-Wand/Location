@@ -17,7 +17,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.1.1</string>
 	<key>CFBundleVersion</key>
-	<string>459</string>
+	<string>495</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>testing 🧑‍💻</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -31,6 +31,10 @@
 	<string>testing 🧑‍💻</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>testing 🧑‍💻</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string></string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
