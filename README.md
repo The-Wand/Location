@@ -1,20 +1,21 @@
 
 ## API for Any (thing) |
 
-### Usage
+### ⚙️ Usage
+
 ```bash
 
-#Ask Data
-"https://api.github.com/gists" | { (data: Data) in
+#Request current Location
+|{ (location: CLLocation) in 
 
 }
 
-#Wait for Notification
-UIApplication.didBecomeActiveNotification | { (n: Notification) in
-
+#Request .authorizedAlways permissions once
+CLAuthorizationStatus.authorizedAlways | .one { status in
+            
 }
-
 ```
+
 ### Idea
   Imagine that you have a black box that can give you any object 💡  
   You don't know what is already in box or what will happens inside ⚙️   
