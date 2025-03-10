@@ -1,9 +1,10 @@
 {
+  "originHash" : "9ce8ef059ebe1ce94da55d53adeadaf7334520a310177c723ae28f160d445054",
   "pins" : [
     {
       "identity" : "any",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/The-Wand/Any.git",
+      "location" : "https://github.com/el-machine/Any",
       "state" : {
         "revision" : "ba94ebd40a70c5d6d058ae25f3b7cacb810dfec4",
         "version" : "1.0.1"
@@ -19,5 +20,5 @@
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

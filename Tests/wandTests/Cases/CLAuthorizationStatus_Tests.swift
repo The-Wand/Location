@@ -20,7 +20,7 @@
 import CoreLocation
 
 import Any_
-import Wand_CoreLocation
+import WandLocation
 import Wand
 
 import XCTest

@@ -20,7 +20,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Wand_CoreLocation",
+    name: "WandLocation",
     defaultLocalization: "ru",
 
     platforms: [
@@ -31,21 +31,21 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Wand_CoreLocation", targets: ["Wand_CoreLocation"])
+        .library(name: "WandLocation", targets: ["WandLocation"])
     ],
 
     dependencies: [
-        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
-        .package(url: "https://github.com/el-machine/Wand.git", from: "1.4.6"),
+        .package(url: "https://github.com/The-Wand/Any.git", from: "1.0.1"),
+        .package(url: "https://github.com/The-Wand/Wand.git", from: "1.5.2"),
     ],
 
     targets: [
 
-        .target(name: "Wand_CoreLocation", dependencies: ["Wand"] ),
+        .target(name: "WandLocation", dependencies: ["Wand"] ),
         .testTarget(name: "wandTests", dependencies:
                         [
+                            "WandLocation",
                             .product(name: "Any_", package: "Any"),
-                            "Wand_CoreLocation",
                         ]
                    )
 

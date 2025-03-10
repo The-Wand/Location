@@ -1,5 +1,4 @@
 ///
-/// Copyright © 2020-2024 El Machine 🤖
 /// Copyright 2020 Alexander Kozin
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,7 +20,7 @@
 import CoreLocation
 
 import Any_
-import Wand_CoreLocation
+import WandLocation
 import Wand
 
 import XCTest
