@@ -16,28 +16,10 @@
 /// Created by Alex Kozin
 /// El Machine 🤖
 
-#if canImport(CoreMotion)
-import CoreMotion
+#if canImport(CoreLocation)
+import CoreLocation
 
-typealias Attitude          = CMAttitude
-typealias AltitudeData      = CMAltitudeData
-typealias DeviceMotion      = CMDeviceMotion
-typealias MagnetometerData  = CMMagnetometerData
-typealias GyroData          = CMGyroData
-typealias PedometerData     = CMPedometerData
-typealias PedometerEvent    = CMPedometerEvent
-
-//TODO: Test isRelativeAltitudeAvailable
-//import Wand
-//
-//@available(iOS 13.0, *)
-//public
-//extension Wand.Error {
-//
-//    static func motion(_ code: VNErrorCode, reason: String? = nil) -> Error {
-//        Self(code: code.rawValue, reason: reason ?? "")
-//    }
-//
-//}
+typealias Location              = CLLocation
+typealias AuthorizationStatus   = CLAuthorizationStatus
 
 #endif
