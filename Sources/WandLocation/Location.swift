@@ -16,44 +16,10 @@
 /// Created by Alex Kozin
 /// El Machine 🤖
 
-import Foundation
-import XCTest
+#if canImport(CoreLocation)
+import CoreLocation
 
-import Wand
+typealias Location              = CLLocation
+typealias AuthorizationStatus   = CLAuthorizationStatus
 
-/// Test Unit
-//struct Unit {
-//
-//}
-
-extension TimeInterval {
-
-    static var `default` = 4.2
-
-}
-
-///Performance
-extension [XCTMetric] {
-
-    static
-    var `default`: Self = {[
-        XCTCPUMetric(),
-        XCTClockMetric(),
-        XCTMemoryMetric(),
-        XCTStorageMetric(),
-    ]}()
-
-}
-
-///Expectations
-extension XCTestCase {
-
-    func expectation(function: String = #function) -> XCTestExpectation {
-        expectation(description: function)
-    }
-
-    func waitForExpectations() {
-        waitForExpectations(timeout: .default)
-    }
-
-}
+#endif

@@ -3,7 +3,7 @@
     {
       "identity" : "any",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Any.git",
+      "location" : "https://github.com/The-Wand/Any.git",
       "state" : {
         "revision" : "ba94ebd40a70c5d6d058ae25f3b7cacb810dfec4",
         "version" : "1.0.1"
@@ -12,10 +12,10 @@
     {
       "identity" : "wand",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Wand.git",
+      "location" : "https://github.com/The-Wand/Wand.git",
       "state" : {
-        "revision" : "a312d4220b13b977d5125941ef7d8bc8027d1673",
-        "version" : "1.4.6"
+        "revision" : "3feabdd634d5a9ccb3e49530a9b300c64049762a",
+        "version" : "1.5.2"
       }
     }
   ],

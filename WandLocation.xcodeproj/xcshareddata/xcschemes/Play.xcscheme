@@ -4,8 +4,25 @@
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES"
-      buildArchitectures = "Automatic">
+      buildImplicitDependencies = "YES">
+      <PostActions>
+         <ExecutionAction
+            ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
+            <ActionContent
+               title = "Run Script"
+               scriptText = "cd $PROJECT_DIR&#10;xcrun agvtool next-version -all&#10;">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "6162624B28BC8E2B00D63EA5"
+                     BuildableName = "Play.app"
+                     BlueprintName = "Play"
+                     ReferencedContainer = "container:WandLocation.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
+         </ExecutionAction>
+      </PostActions>
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -15,10 +32,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "613966142BE0F4EF004C18A3"
-               BuildableName = "watchPlay.app"
-               BlueprintName = "watchPlay"
-               ReferencedContainer = "container:Wand_CoreLocation.xcodeproj">
+               BlueprintIdentifier = "6162624B28BC8E2B00D63EA5"
+               BuildableName = "Play.app"
+               BlueprintName = "Play"
+               ReferencedContainer = "container:WandLocation.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,10 +47,22 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:App/watchTestPlan.xctestplan"
+            reference = "container:App/testPlan.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>
+      <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "618D53D02BE3C5120098DB6F"
+               BuildableName = "wandTests.xctest"
+               BlueprintName = "wandTests"
+               ReferencedContainer = "container:WandLocation.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -49,15 +78,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "613966142BE0F4EF004C18A3"
-            BuildableName = "watchPlay.app"
-            BlueprintName = "watchPlay"
-            ReferencedContainer = "container:Wand_CoreLocation.xcodeproj">
+            BlueprintIdentifier = "6162624B28BC8E2B00D63EA5"
+            BuildableName = "Play.app"
+            BlueprintName = "Play"
+            ReferencedContainer = "container:WandLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <LocationScenarioReference
-         identifier = "Tokyo, Japan"
-         referenceType = "1">
+         identifier = "../../App/wend.gpx"
+         referenceType = "0">
       </LocationScenarioReference>
    </LaunchAction>
    <ProfileAction
@@ -70,10 +99,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "613966142BE0F4EF004C18A3"
-            BuildableName = "watchPlay.app"
-            BlueprintName = "watchPlay"
-            ReferencedContainer = "container:Wand_CoreLocation.xcodeproj">
+            BlueprintIdentifier = "6162624B28BC8E2B00D63EA5"
+            BuildableName = "Play.app"
+            BlueprintName = "Play"
+            ReferencedContainer = "container:WandLocation.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

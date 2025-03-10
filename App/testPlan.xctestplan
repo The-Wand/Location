@@ -21,7 +21,7 @@
   "testTargets" : [
     {
       "target" : {
-        "containerPath" : "container:Wand_CoreLocation.xcodeproj",
+        "containerPath" : "container:WandLocation.xcodeproj",
         "identifier" : "618D53D02BE3C5120098DB6F",
         "name" : "wandTests"
       }

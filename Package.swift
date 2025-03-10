@@ -1,15 +1,12 @@
 // swift-tools-version: 5.6
-
 ///
-/// Copyright © 2020-2024 El Machine 🤖
-/// https://el-machine.com/
+/// Copyright 2020 Alexander Kozin
 ///
 /// Licensed under the Apache License, Version 2.0 (the "License");
 /// you may not use this file except in compliance with the License.
 /// You may obtain a copy of the License at
 ///
-/// 1) LICENSE file
-/// 2) https://apache.org/licenses/LICENSE-2.0
+///     http://www.apache.org/licenses/LICENSE-2.0
 ///
 /// Unless required by applicable law or agreed to in writing, software
 /// distributed under the License is distributed on an "AS IS" BASIS,
@@ -18,12 +15,12 @@
 /// limitations under the License.
 ///
 /// Created by Alex Kozin
-/// 2020 El Machine
+/// El Machine 🤖
 
 import PackageDescription
 
 let package = Package(
-    name: "Wand_CoreLocation",
+    name: "WandLocation",
     defaultLocalization: "ru",
 
     platforms: [
@@ -34,21 +31,21 @@ let package = Package(
     ],
 
     products: [
-        .library(name: "Wand_CoreLocation", targets: ["Wand_CoreLocation"])
+        .library(name: "WandLocation", targets: ["WandLocation"])
     ],
 
     dependencies: [
-        .package(url: "https://github.com/el-machine/Any.git", from: "1.0.1"),
-        .package(url: "https://github.com/el-machine/Wand.git", from: "1.4.6"),
+        .package(url: "https://github.com/The-Wand/Any.git", from: "1.0.1"),
+        .package(url: "https://github.com/The-Wand/Wand.git", from: "1.5.2"),
     ],
 
     targets: [
 
-        .target(name: "Wand_CoreLocation", dependencies: ["Wand"] ),
+        .target(name: "WandLocation", dependencies: ["Wand"] ),
         .testTarget(name: "wandTests", dependencies:
                         [
+                            "WandLocation",
                             .product(name: "Any_", package: "Any"),
-                            "Wand_CoreLocation",
                         ]
                    )
 

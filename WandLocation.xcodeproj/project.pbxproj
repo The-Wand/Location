@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		611A76DB2BFF40C1003D79CD /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 611A76AF2BFF40C1003D79CD /* Package.xctestplan */; };
 		611A76DC2BFF40C1003D79CD /* Package.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 611A76AF2BFF40C1003D79CD /* Package.xctestplan */; };
-		613966272BE0F532004C18A3 /* play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* play.swift */; };
+		613966272BE0F532004C18A3 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		613966662BE0FB0D004C18A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
 		613F9E522C0862EA0014534F /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 613F9E512C0862EA0014534F /* Any_ */; };
-		615159132BF76A8C001646EA /* Wand_CoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_CoreLocation */; };
-		6162625428BC8E2B00D63EA5 /* play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* play.swift */; };
+		615159132BF76A8C001646EA /* WandLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* WandLocation */; };
+		6162625428BC8E2B00D63EA5 /* Play.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6162624528BC8E2A00D63EA5 /* Play.swift */; };
 		6162625828BC8E2B00D63EA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6162624728BC8E2B00D63EA5 /* Assets.xcassets */; };
 		61AED4C32C0602F500279993 /* CLLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */; };
 		61AED4C42C0602F500279993 /* CLLocation_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61AED4BD2C0602F500279993 /* CLLocation_Tests.swift */; };
@@ -22,7 +22,7 @@
 		61D3F1712C08592D00D61B31 /* Any_ in Frameworks */ = {isa = PBXBuildFile; productRef = 61D3F1702C08592D00D61B31 /* Any_ */; };
 		61F0A2E92C08826700A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */; };
 		61F0A2EA2C08826800A1C123 /* CLAuthorizationStatus_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */; };
-		61F648C72BEA122900C2625C /* Wand_CoreLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* Wand_CoreLocation */; };
+		61F648C72BEA122900C2625C /* WandLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 61F648C62BEA122900C2625C /* WandLocation */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6108789F2BFCDEC50018B2FB /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = Wand_CoreLocation.xcodeproj/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
+		6108789F2BFCDEC50018B2FB /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = WandLocation.xcodeproj/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 		611A76AF2BFF40C1003D79CD /* Package.xctestplan */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Package.xctestplan; sourceTree = "<group>"; };
 		612F2B0F2C40040800507D40 /* wend.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = wend.gpx; sourceTree = "<group>"; };
 		613966152BE0F4EF004C18A3 /* watchPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = watchPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,7 +52,7 @@
 		615158E92BF761DC001646EA /* watchInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = watchInfo.plist; sourceTree = "<group>"; };
 		615158EB2BF765A2001646EA /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		615159052BF76666001646EA /* CONTRIB.TXT */ = {isa = PBXFileReference; lastKnownFileType = text; path = CONTRIB.TXT; sourceTree = "<group>"; };
-		6162624528BC8E2A00D63EA5 /* play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = play.swift; sourceTree = "<group>"; };
+		6162624528BC8E2A00D63EA5 /* Play.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Play.swift; sourceTree = "<group>"; };
 		6162624728BC8E2B00D63EA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6162624C28BC8E2B00D63EA5 /* Play.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Play.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		618D53D12BE3C5120098DB6F /* wandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,8 +63,9 @@
 		61AED4C12C0602F500279993 /* Unit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
 		61B1B41C2BC9696200BD1F36 /* Entitlements.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		61B464E72BEB76B70064B4C1 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		61E4A3C82C296768008482D4 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = Wand_CoreLocation.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
+		61E4A3C82C296768008482D4 /* Package.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; name = Package.resolved; path = WandLocation.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved; sourceTree = "<group>"; };
 		61F0A2E82C08817900A1C123 /* CLAuthorizationStatus_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLAuthorizationStatus_Tests.swift; sourceTree = "<group>"; };
+		61F9E4212D7EF37B00C1D30B /* NOTICE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = NOTICE.txt; sourceTree = "<group>"; };
 		OBJ_141 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		OBJ_142 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61F648C72BEA122900C2625C /* Wand_CoreLocation in Frameworks */,
+				61F648C72BEA122900C2625C /* WandLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				615159132BF76A8C001646EA /* Wand_CoreLocation in Frameworks */,
+				615159132BF76A8C001646EA /* WandLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +128,7 @@
 			children = (
 				6162624728BC8E2B00D63EA5 /* Assets.xcassets */,
 				61B1B41C2BC9696200BD1F36 /* Entitlements.entitlements */,
-				6162624528BC8E2A00D63EA5 /* play.swift */,
+				6162624528BC8E2A00D63EA5 /* Play.swift */,
 				615158E82BF761DC001646EA /* info.plist */,
 				618F8F182BEA00D400618E7C /* testPlan.xctestplan */,
 				615158E92BF761DC001646EA /* watchInfo.plist */,
@@ -186,6 +187,7 @@
 				618F8ED22BE9FDCE00618E7C /* Tests */,
 				615159052BF76666001646EA /* CONTRIB.TXT */,
 				OBJ_141 /* LICENSE */,
+				61F9E4212D7EF37B00C1D30B /* NOTICE.txt */,
 				OBJ_142 /* README.md */,
 				613F9E502C0862EA0014534F /* Frameworks */,
 			);
@@ -208,7 +210,7 @@
 			);
 			name = watchPlay;
 			packageProductDependencies = (
-				61F648C62BEA122900C2625C /* Wand_CoreLocation */,
+				61F648C62BEA122900C2625C /* WandLocation */,
 			);
 			productName = "WatchPlay Watch App";
 			productReference = 613966152BE0F4EF004C18A3 /* watchPlay.app */;
@@ -249,7 +251,7 @@
 			);
 			name = Play;
 			packageProductDependencies = (
-				61F648C62BEA122900C2625C /* Wand_CoreLocation */,
+				61F648C62BEA122900C2625C /* WandLocation */,
 			);
 			productName = "Sandbox (iOS)";
 			productReference = 6162624C28BC8E2B00D63EA5 /* Play.app */;
@@ -304,7 +306,7 @@
 					};
 				};
 			};
-			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "Wand_CoreLocation" */;
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "WandLocation" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -369,7 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				613966272BE0F532004C18A3 /* play.swift in Sources */,
+				613966272BE0F532004C18A3 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,7 +389,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6162625428BC8E2B00D63EA5 /* play.swift in Sources */,
+				6162625428BC8E2B00D63EA5 /* Play.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,7 +437,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_PREVIEWS = YES;
@@ -496,7 +498,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -550,7 +552,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -598,7 +600,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -660,7 +662,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -748,7 +750,7 @@
 				CODE_SIGN_ENTITLEMENTS = App/Entitlements.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_HARDENED_RUNTIME = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = YES;
@@ -811,7 +813,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
@@ -865,7 +867,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 497;
+				CURRENT_PROJECT_VERSION = 503;
 				DEVELOPMENT_TEAM = LZSP4Z4B6A;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -1063,7 +1065,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		OBJ_2 /* Build configuration list for PBXProject "Wand_CoreLocation" */ = {
+		OBJ_2 /* Build configuration list for PBXProject "WandLocation" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				OBJ_3 /* Debug */,
@@ -1103,10 +1105,10 @@
 			package = 61D3F16F2C08592D00D61B31 /* XCRemoteSwiftPackageReference "Any" */;
 			productName = Any_;
 		};
-		61F648C62BEA122900C2625C /* Wand_CoreLocation */ = {
+		61F648C62BEA122900C2625C /* WandLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 61A37BC52BE24B97007B7FEE /* XCLocalSwiftPackageReference "." */;
-			productName = Wand_CoreLocation;
+			productName = WandLocation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
