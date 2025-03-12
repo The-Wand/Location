@@ -4,7 +4,7 @@
     {
       "identity" : "any",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/el-machine/Any",
+      "location" : "https://github.com/The-Wand/Any.git",
       "state" : {
         "revision" : "ba94ebd40a70c5d6d058ae25f3b7cacb810dfec4",
         "version" : "1.0.1"
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/The-Wand/Wand.git",
       "state" : {
-        "revision" : "3feabdd634d5a9ccb3e49530a9b300c64049762a",
-        "version" : "1.5.2"
+        "revision" : "f794a1521bfffe40b924c319db7a1c9d64d3c7a3",
+        "version" : "1.5.4"
       }
     }
   ],
