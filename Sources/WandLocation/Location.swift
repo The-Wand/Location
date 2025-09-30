@@ -17,6 +17,7 @@
 /// El Machine 🤖
 
 #if canImport(CoreLocation)
+@_exported
 import CoreLocation
 
 typealias Location              = CLLocation

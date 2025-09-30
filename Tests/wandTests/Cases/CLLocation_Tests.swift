@@ -17,11 +17,9 @@
 /// El Machine 🤖
 
 #if canImport(CoreLocation) /* // */ && !targetEnvironment(simulator) && !os(macOS) //Test with Host App
-import CoreLocation
 
 import Any_
 import WandLocation
-import Wand
 
 import XCTest
 

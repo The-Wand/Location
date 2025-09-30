@@ -17,7 +17,9 @@
 /// El Machine 🤖
 
 #if canImport(CoreLocation)
+@_exported
 import CoreLocation.CLLocation
+@_exported
 import Wand
 
 public

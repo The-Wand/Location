@@ -43,6 +43,13 @@ struct ContentView: View {
             Image(systemName: "wand.and.stars").onAppear() {
 
 
+                |{ (status: CLAuthorizationStatus) in
+
+                } | { (location: CLLocation) in
+
+                }
+
+
 //                let status = CLAuthorizationStatus.authorizedAlways
 //                let region: CLCircularRegion = (55.033333, 82.916667)|
 //
