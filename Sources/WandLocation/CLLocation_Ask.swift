@@ -31,7 +31,19 @@ import Wand
 /// CLAuthorizationStatus.authorizedAlways | { (location: CLLocation) in
 /// 
 /// }
-/// 
+///
+/// T.one | E.one | { (error: Error?) in
+/// }
+/// Ask
+///
+/// |{ (permissions: CLAuthorizationStatus) in
+///
+/// }
+///
+/// CLAuthorizaÅÅtionStatus.authorizedAlways | { (scope: CLAuthorizationStatus) in
+///
+/// }
+///
 extension CLLocation: AskingNil, Wanded {
 
     @inline(__always)

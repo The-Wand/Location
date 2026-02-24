@@ -28,7 +28,7 @@ class CLLocation_Tests: XCTestCase {
 
     weak 
     var wand: Wand?
-
+    //let string: String = date|
     func test_Nil_to_CLLocation_every() {
         let e = expectation()
         e.assertForOverFulfill = false
@@ -127,7 +127,6 @@ class CLLocation_Tests: XCTestCase {
             |.one { (location: CLLocation) in
                 print("🧪 \(location)")
             }
-
         }
 
     }
