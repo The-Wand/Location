@@ -29,7 +29,7 @@ final
 class CLRegion_Tests: XCTestCase {
 
     weak 
-    var wand: Wand?
+    var wand: Core?
 
     func test_CLRegion_Enter_every() {
         let e = expectation()

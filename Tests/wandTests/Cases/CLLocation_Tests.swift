@@ -27,8 +27,8 @@ final
 class CLLocation_Tests: XCTestCase {
 
     weak 
-    var wand: Wand?
-    //let string: String = date|
+    var wand: Core?
+
     func test_Nil_to_CLLocation_every() {
         let e = expectation()
         e.assertForOverFulfill = false
@@ -64,7 +64,7 @@ class CLLocation_Tests: XCTestCase {
 
         let distance: CLLocationDistance = .random(in: 100...420)
 
-        let wand: Wand = ["CLLocationAccuracy": accuracy,
+        let wand: Core = ["CLLocationAccuracy": accuracy,
                           "CLLocationDistance": distance]
         self.wand = wand
 
@@ -72,23 +72,23 @@ class CLLocation_Tests: XCTestCase {
             e.fulfill()
         }
 
-        let context = wand.context
+        let scope = wand.scope
 
-        let manager: CLLocationManager = wand.obtain()
+        let manager: CLLocationManager = wand.get()
         XCTAssertEqual(manager.desiredAccuracy,
-                       context["CLLocationAccuracy"] as! CLLocationAccuracy)
+                       scope["CLLocationAccuracy"] as! CLLocationAccuracy)
         XCTAssertEqual(manager.distanceFilter,
-                       context["CLLocationDistance"] as! CLLocationDistance)
+                       scope["CLLocationDistance"] as! CLLocationDistance)
 
         waitForExpectations()
     }
 
-    func test_CLLocation_to_Ask() {
+    func test_CLLocation_to_Ask_check() {
         let e = expectation()
 
         let location =  CLLocation.any
 
-        location | .one { (asked: CLLocation) in
+        location | .one(check: true) { (asked: CLLocation) in
 
             if asked === location {
                 e.fulfill()

@@ -32,23 +32,23 @@ import Wand
 ///
 /// }
 ///
-extension CLAuthorizationStatus: AskingNil, Wanded {
+extension CLAuthorizationStatus: @retroactive Ask.Nil, @retroactive Wanded {
 
     @inline(__always)
     public
     static 
-    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    func ask<C, T>(with scope: C, ask: Ask<T>) -> Core {
 
-        //Save ask
-        guard wand.answer(the: ask) else {
-            return
+        let wand = Core.to(scope)
+        guard wand.append(ask: ask) else {
+            return wand
         }
 
         //Request for a first time
 
         //Prepare context
-        let source: CLLocationManager       = wand.obtain()
-        let asking: CLAuthorizationStatus?  = wand.extract()
+        let source: CLLocationManager       = wand.get()
+        let asking: CLAuthorizationStatus?  = wand.get()
 
         //Make request
         #if APPCLIP || os(tvOS) || os(visionOS)
@@ -71,6 +71,7 @@ extension CLAuthorizationStatus: AskingNil, Wanded {
 
         #endif
 
+        return wand
     }
 
 }
@@ -78,15 +79,15 @@ extension CLAuthorizationStatus: AskingNil, Wanded {
 @inline(__always)
 @discardableResult
 public
-func | (request: CLAuthorizationStatus, handler: @escaping (CLAuthorizationStatus)->() ) -> Wand {
-    Wand(for: request) | .every(handler: handler)
+func | (request: CLAuthorizationStatus, handler: @escaping (CLAuthorizationStatus)->() ) -> Core {
+    Core(request) | .every(handler: handler)
 }
 
 @inline(__always)
 @discardableResult
 public
-func | (request: CLAuthorizationStatus, ask: Ask<CLAuthorizationStatus> ) -> Wand {
-    Wand(for: request) | ask
+func | (request: CLAuthorizationStatus, ask: Ask<CLAuthorizationStatus> ) -> Core {
+    Core(request) | ask
 }
 
 #endif

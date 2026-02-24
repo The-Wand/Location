@@ -28,7 +28,7 @@ final
 class CLAuthorizationStatus_Tests: XCTestCase {
 
     weak
-    var wand: Wand?
+    var wand: Core?
 
     func test_Nil_to_CLAuthorizationStatus() {
         let e = expectation()

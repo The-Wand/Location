@@ -35,8 +35,8 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/The-Wand/Any.git", from: "1.0.1"),
-        .package(url: "https://github.com/The-Wand/Wand.git", from: "1.5.5"),
+        .package(url: "https://github.com/The-Wand/Any.git", from: "1.0.3"),
+        .package(url: "https://github.com/The-Wand/Wand.git", from: "3.0.4"),
     ],
 
     targets: [

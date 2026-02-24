@@ -62,32 +62,32 @@ extension Ask where T: CLCircularRegion {
 @available(watchOS, unavailable)
 @available(tvOS, unavailable)
 @available(visionOS, unavailable)
-extension CLCircularRegion: Asking, Wanded {
+extension CLCircularRegion: @retroactive Ask.T, @retroactive Wanded {
 
     @inline(__always)
     public
-    static 
-    func wand<T>(_ wand: Wand, asks ask: Ask<T>) {
+    static
+    func ask<C, T>(with scope: C, ask: Ask<T>) -> Core {
 
-        //Save ask
-        guard wand.answer(the: ask) else {
-            return
+        let wand = Core.to(scope)
+        guard wand.append(ask: ask) else {
+            return wand
         }
 
         //Request for a first time
 
         //Prepare context
-        let source: CLLocationManager = wand.obtain()
+        let source: CLLocationManager = wand.get()
 
         //Make request
-        wand | ask.optionWhile { (status: CLAuthorizationStatus) -> Bool in
+        return wand | ask.dependency { (status: CLAuthorizationStatus) -> Bool in
 
             guard status != .notDetermined else {
                 return true
             }
 
             //TODO: Fix cleaners
-            var cleaner: ( ()->() )? = nil
+            let cleaner: ( ()->() )? = nil
 
             let region: CLCircularRegion? = wand.get()
             let regions: [CLCircularRegion]? = wand.get()

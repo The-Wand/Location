@@ -26,20 +26,24 @@ import Wand
 ///
 /// let manager: CLLocationManager = nil|
 ///
-extension CLLocationManager: @retroactive Obtain {
+extension CLLocationManager: @retroactive Obtainable {
 
     @inline(__always)
     public
     static
-    func obtain(by wand: Wand?) -> Self {
+    func obtain<C>(with scope: C?, by wand: Core?) -> Self {
 
         let source = Self()
 
-        source.desiredAccuracy = wand?.get(for: "CLLocationAccuracy") ??                                                     kCLLocationAccuracyThreeKilometers
+        source.desiredAccuracy = scope as? CLLocationAccuracy
+        ?? wand?.get(for: "CLLocationAccuracy")
+        ?? kCLLocationAccuracyThreeKilometers
 
-        source.distanceFilter = wand?.get(for: "CLLocationDistance") ?? 100
+        source.distanceFilter = scope as? CLLocationAccuracy
+        ?? wand?.get(for: "CLLocationDistance")
+        ?? 100
 
-        let wand = wand ?? Wand()
+        let wand = wand ?? Core()
         source.delegate = wand.add(Delegate())
 
         return source
