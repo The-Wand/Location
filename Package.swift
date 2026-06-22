@@ -21,7 +21,6 @@ import PackageDescription
 
 let package = Package(
     name: "WandLocation",
-    defaultLocalization: "ru",
 
     platforms: [
         .iOS(.v14),
@@ -35,8 +34,8 @@ let package = Package(
     ],
 
     dependencies: [
-        .package(url: "https://github.com/the-wand/Any.git", from: "1.0.3"),
-        .package(url: "https://github.com/the-wand/Wand.git", from: "3.0.5"),
+        .package(url: "https://github.com/the-wand/Any.git", exact: "1.0.3"),
+        .package(url: "https://github.com/the-wand/Wand.git", exact: "3.0.11"),
     ],
 
     targets: [
