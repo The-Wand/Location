@@ -16,7 +16,7 @@
 /// Created by Alex Kozin
 /// El Machine 🤖
 
-#if canImport(CoreLocation) /* // */ && !targetEnvironment(simulator) && !os(macOS) //Test with Host App
+#if canImport(CoreLocation) && !targetEnvironment(simulator) && !os(macOS) //Test with Host App
 
 import Any_
 import WandLocation

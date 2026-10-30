@@ -52,7 +52,7 @@ extension CLLocation: @retroactive Ask.Nil, @retroactive Wanded {
     func ask<C, T>(with scope: C, ask: Ask<T>) -> Core {
 
         let wand = Core.to(scope)
-        guard wand.append(ask: ask) else {
+        guard wand + ask else {
             return wand
         }
 

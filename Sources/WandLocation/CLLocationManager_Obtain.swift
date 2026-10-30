@@ -44,7 +44,7 @@ extension CLLocationManager: @retroactive Obtainable {
         ?? 100
 
         let wand = wand ?? Core()
-        source.delegate = wand.add(Delegate())
+        source.delegate = wand + Delegate()
 
         return source
     }
@@ -61,11 +61,11 @@ extension CLLocationManager {
                              didUpdateLocations locations: [CLLocation]) {
             print("Loc")
             if let last = locations.last {
-                isWanded?.add(last)
+                isWanded + last
             }
 
             if locations.count > 1 {
-                isWanded?.add(locations)
+                isWanded + locations
             }
 
         }
@@ -87,7 +87,7 @@ extension CLLocationManager {
         func locationManager(_ manager: CLLocationManager,
                              didFailWithError error: Error) {
 
-            isWanded?.add(error)
+            isWanded + error
         }
 
 #if !os(visionOS)
@@ -96,7 +96,7 @@ extension CLLocationManager {
         @inlinable
         func locationManager(_ manager: CLLocationManager,
                              didChangeAuthorization status: CLAuthorizationStatus) {
-            isWanded?.add(status)
+            isWanded + status
         }
 
 #endif
@@ -110,7 +110,7 @@ extension CLLocationManager {
         @available(watchOS, unavailable)
         func locationManager(_ manager: CLLocationManager,
                              didFinishDeferredUpdatesWithError error: (any Error)?) {
-            isWanded?.add(error)
+            isWanded + error
         }
 
         @available(iOS 8.0, *)
@@ -119,7 +119,7 @@ extension CLLocationManager {
         @available(watchOS, unavailable)
         @inlinable
         func locationManager(_ manager: CLLocationManager, didVisit visit: CLVisit) {
-            isWanded?.add(visit)
+            isWanded + visit
         }
 
         ///CLBeacon
@@ -150,8 +150,7 @@ extension CLLocationManager {
         @inlinable
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
             print("didEnterRegion")
-            isWanded?.add(region,
-                          for: Ask<CLCircularRegion>.Keys.didEnter.rawValue)
+            isWanded + region & Ask<CLCircularRegion>.Keys.didEnter.rawValue
         }
 
         @available(iOS 4.0, *)
@@ -161,8 +160,7 @@ extension CLLocationManager {
         @inlinable
         func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
             print("didExitRegion")
-            isWanded?.add(region,
-                          for: Ask<CLCircularRegion>.Keys.didExit.rawValue)
+            isWanded + region & Ask<CLCircularRegion>.Keys.didExit.rawValue
         }
 
 #endif

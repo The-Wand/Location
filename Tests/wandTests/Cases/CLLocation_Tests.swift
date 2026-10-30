@@ -16,7 +16,7 @@
 /// Created by Alex Kozin
 /// El Machine 🤖
 
-#if canImport(CoreLocation) /* // */ && !targetEnvironment(simulator) && !os(macOS) //Test with Host App
+#if canImport(CoreLocation) && !targetEnvironment(simulator) && !os(macOS) //Test with Host App
 
 import Any_
 import WandLocation
@@ -144,7 +144,7 @@ class CLLocation_Tests: XCTestCase {
     }
 
     func test_CLLocationManager() {
-        XCTAssertNotNil(CLLocationManager.self|)
+        XCTAssertNotNil(CLLocationManager.self| as CLLocationManager)
     }
 
     func test_closed() throws {
